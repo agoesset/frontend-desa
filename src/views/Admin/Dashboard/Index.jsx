@@ -49,7 +49,7 @@ export default function Dashboard() {
           <div className="col-12 col-lg-12">
             <div className="row">
               <div className="col-6 col-lg-3 col-md-6">
-                <Link to={"admin/categories"} className="card">
+                <Link to={"/admin/categories"} className="card">
                   <div className="card-body px-4 py-4-5">
                     <div className="row">
                       <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
@@ -68,7 +68,7 @@ export default function Dashboard() {
                 </Link>
               </div>
               <div className="col-6 col-lg-3 col-md-6">
-                <Link to={"admin/posts"} className="card">
+                <Link to={"/admin/posts"} className="card">
                   <div className="card-body px-4 py-4-5">
                     <div className="row">
                       <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
@@ -85,7 +85,7 @@ export default function Dashboard() {
                 </Link>
               </div>
               <div className="col-6 col-lg-3 col-md-6">
-                <Link to={"admin/products"} className="card">
+                <Link to={"/admin/products"} className="card">
                   <div className="card-body px-4 py-4-5">
                     <div className="row">
                       <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
@@ -102,7 +102,7 @@ export default function Dashboard() {
                 </Link>
               </div>
               <div className="col-6 col-lg-3 col-md-6">
-                <Link to={"admin/aparaturs"} className="card">
+                <Link to={"/admin/aparaturs"} className="card">
                   <div className="card-body px-4 py-4-5">
                     <div className="row">
                       <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
