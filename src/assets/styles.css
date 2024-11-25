@@ -1,0 +1,46 @@
+.ql-container {
+  min-height: 200px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.ql-toolbar {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #f8f9fa;
+  border-color: #dce7f1;
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.ql-snow .ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow .ql-toolbar button.ql-active {
+  color: #435ebe;
+}
+
+.ql-snow .ql-toolbar button:hover .ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-fill {
+  fill: #435ebe;
+}
+
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:focus .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke {
+  stroke: #435ebe;
+}
+
+.ql-container.ql-snow {
+  border-color: #dce7f1;
+  background: white;
+}
+
+/* Tambahan margin bawah untuk container editor */
+.form-group:has(.ql-container) {
+  margin-bottom: 70px;
+}
