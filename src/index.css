@@ -1,0 +1,10 @@
+@import "swiper/css/bundle";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../public/css/animate.css";
+@import "../public/css/nice-select.css";
+@import "../public/css/tabler-icons.min.css";
+@import "../public/css/bootstrap.min.css";
+@import "../public/css/magnific-popup.css";
+
+@import "../public/css/style.css";
