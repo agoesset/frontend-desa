@@ -1,9 +1,10 @@
-const staticCacheName = "precache-v3.2.0";
-const dynamicCacheName = "runtimecache-v3.2.0";
+const CACHE_NAME = "desa-digital-v1";
 
-// Pre Caching Assets
-const precacheAssets = [
+// Assets to cache
+const urlsToCache = [
   "/",
+  "/index.html",
+  "/manifest.json",
   "/offline",
   "/img/icons/icon-72x72.png",
   "/img/icons/icon-96x96.png",
@@ -13,54 +14,63 @@ const precacheAssets = [
   "/img/icons/icon-192x192.png",
   "/img/icons/icon-384x384.png",
   "/img/icons/icon-512x512.png",
-  "/img/bg-img/no-internet.png",
-  "/js/theme-switching.js",
-  "/manifest.json",
-  "/web/js/pwa.js",
 ];
 
-// Install Event
-self.addEventListener("install", function (event) {
+// Install SW
+self.addEventListener("install", (event) => {
+  console.log("Service Worker: Installing....");
   event.waitUntil(
-    caches.open(staticCacheName).then(function (cache) {
-      return cache.addAll(precacheAssets);
-    })
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => {
+        console.log("Service Worker: Caching Files");
+        return cache.addAll(urlsToCache);
+      })
+      .then(() => self.skipWaiting())
   );
 });
 
-// Activate Event
-self.addEventListener("activate", function (event) {
+// Activate SW
+self.addEventListener("activate", (event) => {
+  console.log("Service Worker: Activated");
+  // Remove old caches
   event.waitUntil(
-    caches.keys().then((keys) => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        keys
-          .filter((key) => key !== staticCacheName && key !== dynamicCacheName)
-          .map((key) => caches.delete(key))
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log("Service Worker: Clearing Old Cache");
+            return caches.delete(cache);
+          }
+        })
       );
     })
   );
 });
 
-// Fetch Event
-self.addEventListener("fetch", function (event) {
+// Fetch event
+self.addEventListener("fetch", (event) => {
+  // Check if request is made by chrome extensions or web page
+  // If request is made for web page url must contains http.
+  if (!(event.request.url.indexOf("http") === 0)) return;
+
+  // Skip POST requests
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
-    caches
-      .match(event.request)
-      .then((cacheRes) => {
-        return (
-          cacheRes ||
-          fetch(event.request).then((response) => {
-            return caches.open(dynamicCacheName).then(function (cache) {
-              // Store the response in cache
-              cache.put(event.request, response.clone());
-              return response;
-            });
-          })
-        );
+    fetch(event.request)
+      .then((res) => {
+        // Make copy/clone of response
+        const resClone = res.clone();
+        // Open cache
+        caches.open(CACHE_NAME).then((cache) => {
+          // Add response to cache
+          if (event.request.method === "GET") {
+            cache.put(event.request, resClone);
+          }
+        });
+        return res;
       })
-      .catch(function () {
-        // Fallback Page, When No Internet Connection
-        return caches.match("/offline");
-      })
+      .catch(() => caches.match(event.request).then((res) => res))
   );
 });
