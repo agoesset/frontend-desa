@@ -123,6 +123,27 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
+        <div>
+          <iframe
+            src="https://plausible.io/share/desa.aguss.id?auth=4kjdxbqH82ggEajI6zZfC&embed=true&theme=system"
+            scrolling="no"
+            frameBorder="0"
+            loading="lazy"
+            style={{ width: "100%", height: "1600px" }}
+          />
+          <div style={{ fontSize: "14px", paddingBottom: "14px" }}>
+            Stats powered by{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#4F46E5", textDecoration: "underline" }}
+              href="https://plausible.io"
+            >
+              Plausible Analytics
+            </a>
+          </div>
+          <script async src="https://plausible.io/js/embed.host.js"></script>
+        </div>
       </div>
     </LayoutAdmin>
   );
