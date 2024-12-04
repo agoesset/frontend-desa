@@ -125,13 +125,11 @@ export default function Dashboard() {
         </section>
       </div>
       <>
-        <script>
-          var script = document.createElement('script'); script.defer = true;
-          script.dataset.domain = "desa.aguss.id"; script.dataset.api =
-          "https://plausible.io/api/event"; script.src =
-          "https://plausible.io/js/script.js";
-          document.getElementsByTagName('head')[0].appendChild(script);
-        </script>
+        <script
+          defer
+          data-domain="desa.aguss.id"
+          src="https://plausible.io/js/script.js"
+        ></script>
       </>
     </LayoutAdmin>
   );
