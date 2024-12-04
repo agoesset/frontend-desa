@@ -5,6 +5,7 @@ import Loading from "../../general/Loading";
 
 // Import Swiper styles
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 const ProductSection = () => {
   const [products, setProducts] = useState([]);
@@ -58,7 +59,7 @@ const ProductSection = () => {
             {products.map((product) => (
               <SwiperSlide key={product.id} className="card flash-sale-card">
                 <div className="card-body">
-                  <a href={`/product/${product.slug}`}>
+                  <Link to={`/products/${product.slug}`}>
                     <img
                       src={product.image}
                       alt={product.title}
@@ -71,7 +72,7 @@ const ProductSection = () => {
                     <p className="sale-price mb-0">
                       Rp {product.price.toLocaleString("id-ID")}
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </SwiperSlide>
             ))}

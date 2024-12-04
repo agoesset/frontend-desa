@@ -1,5 +1,5 @@
 import ProductSlider from "./ProductSlider";
-import SingleProductArea from "./SingleProductArea";
+import SingleProductArea from "./ProductDetail";
 import HeaderTwo from "../../../layouts/web/HeaderTwo";
 import Footer from "../../../layouts/web/Footer";
 

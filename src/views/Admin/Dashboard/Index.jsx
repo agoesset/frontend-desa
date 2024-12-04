@@ -124,6 +124,13 @@ export default function Dashboard() {
           </div>
         </section>
       </div>
+      <>
+        <script
+          defer
+          data-domain="desa.aguss.id"
+          src="https://plausible.io/js/script.js"
+        ></script>
+      </>
     </LayoutAdmin>
   );
 }

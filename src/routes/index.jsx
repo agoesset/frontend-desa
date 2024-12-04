@@ -32,63 +32,71 @@ import AparatursCreate from "../views/Admin/Aparaturs/Create";
 import AparatursEdit from "../views/Admin/Aparaturs/Edit";
 
 // Frontend Components
-import MainHome from "../components/web/MainHome";
-import Settings from "../components/web/Settings";
-import Pages from "../components/web/pages";
-import Intro from "../components/web/intro";
-import ShopGrid from "../components/web/ShopGrid";
-import ShopList from "../components/web/ShopList";
-import SingleProduct from "../components/web/single-product";
-import Catagory from "../components/web/Catagory";
-import SubCatagory from "../components/web/SubCatagory";
-import FlashSale from "../components/web/FlashSale";
-import BlogGrid from "../components/web/BlogGrid";
-import BlogList from "../components/web/BlogList";
-import BlogDetails from "../components/web/BlogDetails";
-import Aboutus from "../components/web/Aboutus";
-import Contact from "../components/web/Contact";
 import Offline from "../components/web/Offline";
 import PrivacyPolicy from "../components/web/PrivacyPolicy";
 import NotFound from "../components/web/NotFound";
 import HomePage from "../components/web/HomePage";
+import ProductDetail from "../components/web/single-product/ProductDetail";
+import ProductsList from "../components/web/home/ProductsList";
+import Photos from "../components/web/home/PhotosList";
+import PostDetail from "../components/web/single-product/PostDetail";
+import Posts from "../components/web/home/ListPosts";
+import PageDetail from "../components/web/single-product/PageDetail";
+import AparaturList from "../components/web/CombinedPages";
+import CombinedPages from "../components/web/CombinedPages";
 
 // Frontend Routes
 const frontendRoutes = [
   { path: "/", element: <HomePage />, errorElement: <CustomError /> },
-  { path: "/settings", element: <Settings />, errorElement: <CustomError /> },
-  { path: "/pages", element: <Pages />, errorElement: <CustomError /> },
-  { path: "/shop-grid", element: <ShopGrid />, errorElement: <CustomError /> },
-  { path: "/shop-list", element: <ShopList />, errorElement: <CustomError /> },
   {
-    path: "/single-product",
-    element: <SingleProduct />,
-    errorElement: <CustomError />,
-  },
-  { path: "/catagory", element: <Catagory />, errorElement: <CustomError /> },
-  {
-    path: "/sub-catagory",
-    element: <SubCatagory />,
+    path: "/products/:slug",
+    element: <ProductDetail />,
     errorElement: <CustomError />,
   },
   {
-    path: "/flash-sale",
-    element: <FlashSale />,
+    path: "/products",
+    element: <ProductsList />,
     errorElement: <CustomError />,
   },
-  { path: "/blog-grid", element: <BlogGrid />, errorElement: <CustomError /> },
-  { path: "/blog-list", element: <BlogList />, errorElement: <CustomError /> },
   {
-    path: "/blog-details",
-    element: <BlogDetails />,
+    path: "/photos",
+    element: <Photos />,
     errorElement: <CustomError />,
   },
-  { path: "/about-us", element: <Aboutus />, errorElement: <CustomError /> },
-  { path: "/contact", element: <Contact />, errorElement: <CustomError /> },
+  {
+    path: "/posts/:slug",
+    element: <PostDetail />,
+    errorElement: <CustomError />,
+  },
+  {
+    path: "/posts",
+    element: <Posts />,
+    errorElement: <CustomError />,
+  },
+  {
+    path: "/pages",
+    element: <CombinedPages />,
+    errorElement: <CustomError />,
+  },
+  {
+    path: "/pages/:slug",
+    element: <PageDetail />,
+    errorElement: <CustomError />,
+  },
+  {
+    path: "/aparaturs", // Route baru untuk aparatur
+    element: <AparaturList />,
+    errorElement: <CustomError />,
+  },
   { path: "/offline", element: <Offline />, errorElement: <CustomError /> },
   {
     path: "/privacy-policy",
     element: <PrivacyPolicy />,
     errorElement: <CustomError />,
+  },
+  {
+    path: "/products/:slug",
+    element: <ProductDetail />,
   },
 ];
 

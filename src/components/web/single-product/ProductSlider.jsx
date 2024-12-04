@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import VideoPopup from "../../modals/VideoPopup";
 
 const ProductSlider = () => {
-  const [isVideoOpen, setIsVideoOpen] = useState<boolean>(false);
+  const [isVideoOpen, setIsVideoOpen] = useState < boolean > false;
 
   return (
     <>
