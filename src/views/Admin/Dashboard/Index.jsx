@@ -125,7 +125,7 @@ export default function Dashboard() {
         </section>
         <div>
           <iframe
-            src="https://plausible.io/share/desa.aguss.id?auth=gQXUWcq3ZsFW55GM_bfUh&embed=true&theme=system"
+            src="https://plausible.io/share/desa.aguss.id?auth=gQXUWcq3ZsFW55GM_bfUh&embed=true&theme=light"
             scrolling="no"
             frameBorder="0"
             loading="lazy"
