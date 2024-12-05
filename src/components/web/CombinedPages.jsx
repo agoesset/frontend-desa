@@ -15,9 +15,9 @@ export default function CombinedPages() {
     try {
       const response = await Api.get("/api/public/pages");
       setPages(response.data.data);
-      setLoading(false);
     } catch (error) {
-      console.error("Failed to fetch pages data!");
+      console.error("Failed to fetch pages data!", error);
+    } finally {
       setLoading(false);
     }
   };
@@ -26,9 +26,9 @@ export default function CombinedPages() {
     try {
       const response = await Api.get("/api/public/aparaturs");
       setAparaturs(response.data.data);
-      setLoading(false);
     } catch (error) {
-      console.error("Failed to fetch aparaturs data!");
+      console.error("Failed to fetch aparaturs data!", error);
+    } finally {
       setLoading(false);
     }
   };
@@ -93,20 +93,22 @@ export default function CombinedPages() {
           <div className="tab-content">
             {/* Pages Content */}
             {activeTab === "pages" && (
-              <div className="row">
+              <div className="row g-3">
                 {pages.map((page) => (
                   <div key={page.id} className="col-12">
-                    <div
-                      className="card"
-                      onClick={() => navigate(`/pages/${page.slug}`)}
+                    <Link
+                      to={`/pages/${page.slug}`}
+                      className="text-decoration-none"
                     >
-                      <div className="card-body px-4">
-                        <div className="d-flex align-items-center justify-content-between">
-                          <h6 className="mb-0">{page.title}</h6>
-                          <i className="bi bi-chevron-right"></i>
+                      <div className="card">
+                        <div className="card-body px-4">
+                          <div className="d-flex align-items-center justify-content-between">
+                            <h6 className="mb-0 text-content">{page.title}</h6>
+                            <i className="bi bi-chevron-right text-secondary"></i>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -114,10 +116,10 @@ export default function CombinedPages() {
 
             {/* Aparaturs Content */}
             {activeTab === "aparaturs" && (
-              <div className="row">
+              <div className="row g-3">
                 {aparaturs.map((aparatur) => (
                   <div key={aparatur.id} className="col-6 col-md-4 col-lg-4">
-                    <div className="card">
+                    <div className="card h-100">
                       <div className="card-body text-center">
                         <div className="user-profile mb-2">
                           <img
@@ -129,10 +131,11 @@ export default function CombinedPages() {
                               objectFit: "cover",
                               borderRadius: "10px",
                             }}
+                            loading="lazy"
                           />
                         </div>
-                        <h6 className="mb-1">{aparatur.name}</h6>
-                        <p className="mb-0 text-gray-600 small font-italic">
+                        <h6 className="mb-1 text-content">{aparatur.name}</h6>
+                        <p className="mb-0 small text-secondary font-italic">
                           {aparatur.role}
                         </p>
                       </div>

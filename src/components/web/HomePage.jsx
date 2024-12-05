@@ -1,4 +1,3 @@
-import Alert from "./common/Alert";
 import ProductSection from "./home/ProductSection";
 import HeroSlider from "./home/HeroSlider";
 import DarkLight from "./common/DarkLight";
@@ -10,7 +9,6 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <Alert />
       <div className="page-content-wrapper">
         <HeroSlider />
         <ProductSection />

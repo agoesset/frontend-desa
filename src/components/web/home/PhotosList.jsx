@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Api from "../../../services/Api";
 import Loading from "../../general/Loading";
 import Footer from "../../../layouts/web/Footer";
@@ -83,8 +83,8 @@ const Photos = () => {
                         />
                       </div>
                       {photo.caption && (
-                        <div
-                          className="mt-2 px-1 text-muted small"
+                        <h6
+                          className="mt-2 px-1"
                           style={{
                             overflow: "hidden",
                             display: "-webkit-box",
@@ -95,7 +95,7 @@ const Photos = () => {
                           }}
                         >
                           {photo.caption}
-                        </div>
+                        </h6>
                       )}
                     </div>
                   </div>

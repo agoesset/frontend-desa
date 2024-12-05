@@ -56,7 +56,7 @@ const PostDetail = () => {
           <h5 className="mb-3">{post.title}</h5>
 
           {/* Author and Date */}
-          <div className="d-flex flex-wrap gap-3 text-muted small mb-3">
+          <div className="d-flex flex-wrap gap-3 small mb-3">
             <div className="d-flex align-items-center">
               <i className="bi bi-person me-1"></i>
               <span>{post.user.name}</span>

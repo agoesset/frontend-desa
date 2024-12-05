@@ -93,7 +93,7 @@ const Posts = () => {
                             className="text-decoration-none"
                           >
                             <h6
-                              className="mb-1 text-light"
+                              className="mb-1 "
                               style={{
                                 overflow: "hidden",
                                 display: "-webkit-box",
