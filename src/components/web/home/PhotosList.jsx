@@ -53,7 +53,7 @@ const Photos = () => {
               onClick={() => navigate(-1)}
               className="btn btn-light btn-sm"
             >
-              <i className="bi bi-arrow-left"></i>
+              <i className="bi bi-arrow-left text-secondary"></i>
             </button>
             <h5 className="mb-0">Galeri Foto</h5>
           </div>

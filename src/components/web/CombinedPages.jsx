@@ -119,7 +119,7 @@ export default function CombinedPages() {
               <div className="row g-3">
                 {aparaturs.map((aparatur) => (
                   <div key={aparatur.id} className="col-6 col-md-4 col-lg-4">
-                    <div className="card h-100">
+                    <div className="card">
                       <div className="card-body text-center">
                         <div className="user-profile mb-2">
                           <img
